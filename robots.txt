@@ -1,4 +1,6 @@
+# Temporary: site copy is still placeholder text.
+# Revert to "Allow: /" before launch.
 User-agent: *
-Allow: /
+Disallow: /
 
 Sitemap: https://3rdsunlabs.com/sitemap.xml
