@@ -548,7 +548,7 @@ h1 {
 }
 
 /* Nav collapses earlier than the other breakpoints: four links plus the
-   Customer Portal pill run out of room before 720px. */
+   Client Portal pill run out of room before 720px. */
 @media (max-width: 860px) {
   .nav-toggle {
     display: inline-grid;
