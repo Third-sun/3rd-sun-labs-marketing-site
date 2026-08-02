@@ -1,0 +1,19 @@
+{
+  "brand": "3rd Sun Labs",
+  "tagline": "Innovation. Automation. Impact.",
+  "colors": {
+    "solar_navy": "#030B23",
+    "deep_orbit": "#06132F",
+    "raised_surface": "#0D2145",
+    "ion_cyan": "#10D3F4",
+    "signal_blue": "#0595EB",
+    "lab_indigo": "#6742EA",
+    "violet": "#7D74ED",
+    "starlight": "#F4F7FF",
+    "muted_text": "#A7B6D4"
+  },
+  "typography": {
+    "display": "Space Grotesk",
+    "body": "Inter"
+  }
+}

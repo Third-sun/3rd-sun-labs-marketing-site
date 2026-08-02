@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://3rdsunlabs.com/sitemap.xml

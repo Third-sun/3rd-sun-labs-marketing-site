@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3rd Sun Labs Brand Guide</title>
+  <meta name="theme-color" content="#030B23">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .guide-hero { padding: 5rem 0 3rem; }
+    .guide-logo {
+      max-width: 760px;
+      margin-top: 2.5rem;
+      padding: 2rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--navy-900);
+    }
+    .guide-section { padding: 3.5rem 0; }
+    .guide-section h2 { font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -0.04em; }
+    .guide-copy { max-width: 760px; color: var(--color-text-muted); }
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .swatch {
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      background: var(--color-surface);
+    }
+    .swatch-color { height: 120px; }
+    .swatch-info { padding: 1rem; }
+    .swatch-info strong, .swatch-info code { display: block; }
+    .swatch-info code { color: var(--color-text-muted); }
+    .type-sample {
+      margin-top: 1rem;
+      padding: 1.5rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,.025);
+    }
+    .type-display { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 4rem); line-height: 1; }
+    .type-body { max-width: 760px; color: var(--color-text-muted); }
+    .usage-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .usage-card {
+      padding: 1.5rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      background: var(--color-surface);
+    }
+    .usage-card h3 { margin-bottom: .5rem; }
+    .usage-card p { color: var(--color-text-muted); }
+    .gradient-bar {
+      height: 90px;
+      margin-top: 1rem;
+      border-radius: var(--radius-sm);
+      background: var(--brand-gradient);
+    }
+    @media (max-width: 720px) { .usage-grid { grid-template-columns: 1fr; } }
+    @media print {
+      .site-header, .site-footer { display: none; }
+      body { background: #030B23 !important; }
+      .guide-section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo-icon-transparent.png" alt="" width="46" height="46">
+        <span class="brand-name">3rd Sun Labs</span>
+      </a>
+      <nav class="nav-links" aria-label="Brand guide navigation">
+        <a href="#logo">Logo</a>
+        <a href="#color">Color</a>
+        <a href="#type">Typography</a>
+        <a href="#voice">Voice</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="guide-hero">
+      <div class="container">
+        <div class="eyebrow">Brand system</div>
+        <h1>3rd Sun Labs<br><span class="gradient-text">web style guide.</span></h1>
+        <p class="hero-copy">
+          A practical visual system derived from the selected logo. This guide is designed
+          for the website, presentations, social graphics, and digital marketing.
+        </p>
+        <div class="guide-logo">
+          <img src="assets/logo-lockup-transparent.png" alt="3rd Sun Labs — Innovation. Automation. Impact.">
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-section" id="logo">
+      <div class="container">
+        <div class="eyebrow">01 / Logo</div>
+        <h2>Primary identity</h2>
+        <p class="guide-copy">
+          The connected three-node emblem communicates intelligent systems, coordinated
+          automation, and the “third sun” concept. Use the full lockup for formal brand
+          moments and the icon alone for navigation, favicons, app tiles, and social avatars.
+        </p>
+        <div class="usage-grid">
+          <article class="usage-card">
+            <h3>Preferred use</h3>
+            <p>Place the gradient logo on navy or similarly dark backgrounds with generous clear space.</p>
+          </article>
+          <article class="usage-card">
+            <h3>Minimum clear space</h3>
+            <p>Keep at least one central-node diameter around all sides of the icon or lockup.</p>
+          </article>
+          <article class="usage-card">
+            <h3>Do not</h3>
+            <p>Stretch, rotate, recolor individual parts, add heavy shadows, or place the white wordmark on a light background.</p>
+          </article>
+          <article class="usage-card">
+            <h3>Production note</h3>
+            <p>The supplied identity began as raster artwork. A professionally traced vector master is recommended before large-format print work.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-section" id="color">
+      <div class="container">
+        <div class="eyebrow">02 / Color</div>
+        <h2>Dark, electric, precise.</h2>
+        <p class="guide-copy">
+          Navy anchors the identity. Cyan signals innovation, blue provides technological
+          clarity, and violet introduces experimentation and creative intelligence.
+        </p>
+        <div class="swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#030B23"></div>
+            <div class="swatch-info"><strong>Solar Navy</strong><code>#030B23</code></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#06132F"></div>
+            <div class="swatch-info"><strong>Deep Orbit</strong><code>#06132F</code></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#10D3F4"></div>
+            <div class="swatch-info"><strong>Ion Cyan</strong><code>#10D3F4</code></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#0595EB"></div>
+            <div class="swatch-info"><strong>Signal Blue</strong><code>#0595EB</code></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#6742EA"></div>
+            <div class="swatch-info"><strong>Lab Indigo</strong><code>#6742EA</code></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#F4F7FF"></div>
+            <div class="swatch-info"><strong>Starlight</strong><code>#F4F7FF</code></div>
+          </div>
+        </div>
+        <div class="gradient-bar" aria-label="Brand gradient from cyan through blue to violet"></div>
+      </div>
+    </section>
+
+    <section class="guide-section" id="type">
+      <div class="container">
+        <div class="eyebrow">03 / Typography</div>
+        <h2>Modern without feeling like science fiction.</h2>
+        <p class="guide-copy">
+          Use Space Grotesk for headlines, navigation, and short emphasis. Use Inter for
+          body copy, forms, labels, and dense information. Both include broad fallback stacks
+          in the CSS.
+        </p>
+        <div class="type-sample">
+          <div class="type-display">Space Grotesk</div>
+          <p class="type-body">Bold headlines, compact spacing, strong geometric character.</p>
+        </div>
+        <div class="type-sample">
+          <div style="font-size:1.35rem;font-weight:700">Inter</div>
+          <p class="type-body">
+            Clear body typography for detailed explanations, service descriptions, and calls to action.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="guide-section" id="voice">
+      <div class="container">
+        <div class="eyebrow">04 / Voice</div>
+        <h2>Confident, practical, outcome-focused.</h2>
+        <div class="usage-grid">
+          <article class="usage-card">
+            <h3>Lead with the result</h3>
+            <p>Describe the operational benefit before discussing the underlying technology.</p>
+          </article>
+          <article class="usage-card">
+            <h3>Make complexity understandable</h3>
+            <p>Use precise language, but translate jargon when the audience does not need it.</p>
+          </article>
+          <article class="usage-card">
+            <h3>Avoid hype</h3>
+            <p>Prefer “reduce manual processing” over vague claims such as “revolutionize everything.”</p>
+          </article>
+          <article class="usage-card">
+            <h3>Use the tagline deliberately</h3>
+            <p>“Innovation. Automation. Impact.” works best as a signature line, not repeated in every section.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>3rd Sun Labs brand guide</p>
+      <a href="index.html">View website starter</a>
+    </div>
+  </footer>
+</body>
+</html>

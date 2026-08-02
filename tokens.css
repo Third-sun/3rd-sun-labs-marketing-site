@@ -1,0 +1,46 @@
+:root {
+  color-scheme: dark;
+
+  /* Core brand colors */
+  --navy-950: #030B23;
+  --navy-900: #06132F;
+  --navy-800: #0D2145;
+  --cyan-400: #10D3F4;
+  --blue-500: #0595EB;
+  --indigo-500: #6742EA;
+  --violet-400: #7D74ED;
+  --white: #F4F7FF;
+  --muted: #A7B6D4;
+
+  /* Semantic tokens */
+  --color-bg: var(--navy-950);
+  --color-surface: var(--navy-900);
+  --color-surface-raised: var(--navy-800);
+  --color-text: var(--white);
+  --color-text-muted: var(--muted);
+  --color-accent: var(--cyan-400);
+  --color-accent-secondary: var(--violet-400);
+  --color-border: rgba(167, 182, 212, 0.18);
+
+  /* Brand effects */
+  --brand-gradient: linear-gradient(
+    115deg,
+    var(--cyan-400) 0%,
+    var(--blue-500) 46%,
+    var(--indigo-500) 76%,
+    var(--violet-400) 100%
+  );
+  --brand-glow: 0 0 42px rgba(16, 211, 244, 0.16);
+  --surface-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+
+  /* Typography */
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+
+  /* Layout */
+  --container: 1180px;
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 30px;
+  --transition: 180ms ease;
+}
