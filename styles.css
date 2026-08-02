@@ -547,7 +547,9 @@ h1 {
   }
 }
 
-@media (max-width: 720px) {
+/* Nav collapses earlier than the other breakpoints: four links plus the
+   Customer Portal pill run out of room before 720px. */
+@media (max-width: 860px) {
   .nav-toggle {
     display: inline-grid;
     place-items: center;
@@ -575,7 +577,9 @@ h1 {
   .nav-links .button {
     width: 100%;
   }
+}
 
+@media (max-width: 720px) {
   h1 {
     font-size: clamp(2.8rem, 16vw, 4.7rem);
   }
