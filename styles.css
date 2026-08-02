@@ -466,7 +466,9 @@ h1 {
 
 .cta h2 {
   max-width: 800px;
-  margin-bottom: 1rem;
+  /* Carries the full gap down to the button now that the CTA has no
+     paragraph between them. Drop back to 1rem if copy is added back. */
+  margin-bottom: 2rem;
   font-size: clamp(2.3rem, 5vw, 4.5rem);
   letter-spacing: -0.055em;
 }
