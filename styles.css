@@ -1,5 +1,9 @@
 @import url("./tokens.css");
 
+/* Brand rules this file follows (Brand Guidelines v1.0): Poppins; mostly light
+   space and navy; Labs Blue for actions; gold only where it means something;
+   sentence case, no all caps; no gradients, glows or shadows on the logo. */
+
 *,
 *::before,
 *::after {
@@ -13,28 +17,13 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background:
-    radial-gradient(circle at 20% 12%, rgba(16, 211, 244, 0.10), transparent 30rem),
-    radial-gradient(circle at 84% 26%, rgba(103, 66, 234, 0.12), transparent 34rem),
-    var(--color-bg);
+  background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: 1rem;
   line-height: 1.65;
   text-rendering: optimizeLegibility;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  opacity: 0.20;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: linear-gradient(to bottom, black, transparent 78%);
 }
 
 img {
@@ -43,7 +32,7 @@ img {
 }
 
 a {
-  color: inherit;
+  color: var(--color-accent);
 }
 
 button,
@@ -64,8 +53,8 @@ textarea {
   z-index: 999;
   transform: translateY(-150%);
   padding: 0.75rem 1rem;
-  color: var(--navy-950);
-  background: var(--white);
+  color: var(--3sl-white);
+  background: var(--color-dark);
   border-radius: 0.5rem;
 }
 
@@ -73,67 +62,69 @@ textarea {
   transform: none;
 }
 
+:focus-visible {
+  outline: 3px solid var(--3sl-sky-blue);
+  outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------- header */
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 20;
   border-bottom: 1px solid transparent;
-  background: rgba(3, 11, 35, 0.68);
-  backdrop-filter: blur(18px);
-  transition: border-color var(--transition), background var(--transition);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  transition: border-color var(--transition);
 }
 
 .site-header.is-scrolled {
   border-color: var(--color-border);
-  background: rgba(3, 11, 35, 0.90);
 }
 
 .nav {
-  min-height: 78px;
+  min-height: 76px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.25rem;
 }
 
+/* The supplied logo file, never retyped. 36px tall is ~198px wide, above the
+   kit's 120px minimum, and the padding keeps its clear space. */
 .brand {
   display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: var(--white);
-  text-decoration: none;
-  font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: -0.035em;
+  padding: 0.4rem 0;
 }
 
 .brand img {
-  width: 46px;
-  height: 46px;
-  object-fit: contain;
-}
-
-.brand-name {
-  font-size: 1.18rem;
+  height: 36px;
+  width: auto;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.55rem;
+  gap: 1.6rem;
 }
 
 .nav-links a {
-  color: var(--color-text-muted);
+  color: var(--color-heading);
   text-decoration: none;
-  font-size: 0.94rem;
-  font-weight: 650;
+  font-size: 0.95rem;
+  font-weight: var(--weight-medium);
   transition: color var(--transition);
 }
 
 .nav-links a:hover,
 .nav-links a:focus-visible {
-  color: var(--white);
+  color: var(--color-accent);
+}
+
+.nav-links a.button-primary,
+.nav-links a.button-primary:hover {
+  color: var(--3sl-white);
 }
 
 .nav-toggle {
@@ -141,73 +132,131 @@ textarea {
   width: 44px;
   height: 44px;
   border: 1px solid var(--color-border);
-  border-radius: 12px;
-  color: var(--white);
-  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-sm);
+  color: var(--color-heading);
+  background: var(--3sl-white);
+  font-size: 1.2rem;
 }
 
-.hero {
-  min-height: calc(100vh - 78px);
-  display: grid;
-  align-items: center;
-  padding: clamp(5rem, 10vw, 8rem) 0;
-  overflow: hidden;
-}
+/* ---------------------------------------------------------------- buttons */
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
-  align-items: center;
-  gap: clamp(3rem, 8vw, 7rem);
-}
-
-.eyebrow {
+.button {
+  min-height: 48px;
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  margin-bottom: 1.35rem;
-  color: var(--cyan-400);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  justify-content: center;
+  padding: 0.7rem 1.3rem;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
 }
 
-.eyebrow::before {
-  content: "";
-  width: 32px;
-  height: 2px;
-  background: var(--brand-gradient);
-  border-radius: 999px;
+.button-primary {
+  color: var(--3sl-white);
+  background: var(--color-accent);
 }
+
+.button-primary:hover {
+  background: var(--color-accent-strong);
+}
+
+.button-secondary {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: transparent;
+}
+
+.button-secondary:hover {
+  background: var(--3sl-frost);
+}
+
+.on-dark .button-secondary {
+  color: var(--color-on-dark);
+  border-color: var(--color-on-dark-muted);
+}
+
+.on-dark .button-secondary:hover {
+  background: rgba(230, 241, 251, 0.08);
+}
+
+.nav-links .button {
+  min-height: 42px;
+  padding: 0.5rem 1.1rem;
+}
+
+/* ---------------------------------------------------------------- type */
 
 h1,
 h2,
 h3 {
   margin-top: 0;
+  color: var(--color-heading);
   font-family: var(--font-display);
-  line-height: 1.08;
+  font-weight: var(--weight-medium);
+  line-height: 1.15;
 }
 
-h1 {
-  max-width: 790px;
-  margin-bottom: 1.5rem;
-  font-size: clamp(3rem, 7vw, 6.6rem);
-  letter-spacing: -0.065em;
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.1rem;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  font-weight: var(--weight-medium);
 }
 
-.gradient-text {
-  color: transparent;
-  background: var(--brand-gradient);
-  background-clip: text;
-  -webkit-background-clip: text;
+/* A small gold sun: the one place on a section where gold appears. */
+.eyebrow::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-highlight);
+}
+
+/* ---------------------------------------------------------------- hero */
+
+.hero {
+  padding: clamp(4.5rem, 9vw, 7.5rem) 0;
+  background: var(--color-dark);
+  color: var(--color-on-dark);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  align-items: center;
+  gap: clamp(2.5rem, 7vw, 6rem);
+}
+
+.hero .eyebrow {
+  color: var(--color-highlight);
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin-bottom: 1.4rem;
+  color: var(--3sl-white);
+  font-weight: var(--weight-light);
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  letter-spacing: -0.02em;
+}
+
+.hero h1 .accent {
+  display: block;
+  color: var(--color-on-dark-muted);
 }
 
 .hero-copy {
-  max-width: 690px;
+  max-width: 640px;
   margin: 0 0 2rem;
-  color: var(--color-text-muted);
-  font-size: clamp(1.05rem, 1.5vw, 1.22rem);
+  color: var(--color-on-dark);
+  font-size: clamp(1.02rem, 1.4vw, 1.15rem);
+  opacity: 0.92;
 }
 
 .actions {
@@ -216,192 +265,72 @@ h1 {
   gap: 0.9rem;
 }
 
-.button {
-  min-height: 50px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.8rem 1.25rem;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 800;
-  transition:
-    transform var(--transition),
-    border-color var(--transition),
-    background var(--transition),
-    box-shadow var(--transition);
-}
-
-.button:hover {
-  transform: translateY(-2px);
-}
-
-.button-primary {
-  color: var(--navy-950);
-  background: var(--brand-gradient);
-  box-shadow: 0 12px 34px rgba(16, 211, 244, 0.2);
-}
-
-.button-secondary {
-  color: var(--white);
-  border-color: var(--color-border);
-  background: rgba(255, 255, 255, 0.035);
-}
-
-.button-secondary:hover {
-  border-color: rgba(16, 211, 244, 0.52);
-  background: rgba(16, 211, 244, 0.07);
-}
-
 .hero-visual {
-  position: relative;
-  aspect-ratio: 1;
   display: grid;
   place-items: center;
 }
 
-.hero-visual::before,
-.hero-visual::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
+.hero-visual img {
+  width: min(100%, 420px);
+  height: auto;
 }
 
-.hero-visual::before {
-  inset: 2%;
-  border: 1px solid rgba(16, 211, 244, 0.20);
-  animation: spin 28s linear infinite;
-}
-
-.hero-visual::after {
-  inset: 14%;
-  border: 1px dashed rgba(125, 116, 237, 0.28);
-  animation: spin-reverse 22s linear infinite;
-}
-
-.hero-icon-shell {
-  width: min(90%, 520px);
-  aspect-ratio: 1;
-  position: relative;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--color-border);
-  border-radius: 36%;
-  background:
-    radial-gradient(circle, rgba(16, 211, 244, 0.15), transparent 52%),
-    rgba(6, 19, 47, 0.74);
-  box-shadow: var(--surface-shadow), var(--brand-glow);
-  transform: rotate(5deg);
-}
-
-.hero-icon-shell img {
-  width: 82%;
-  transform: rotate(-5deg);
-  filter: drop-shadow(0 22px 38px rgba(0, 0, 0, 0.34));
-}
-
-.orbit-dot {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--cyan-400);
-  box-shadow: 0 0 18px currentColor;
-}
-
-.orbit-dot.one {
-  top: 6%;
-  left: 50%;
-}
-
-.orbit-dot.two {
-  right: 1%;
-  bottom: 30%;
-  color: var(--violet-400);
-  background: currentColor;
-}
-
-.orbit-dot.three {
-  left: 7%;
-  bottom: 18%;
-  color: var(--blue-500);
-  background: currentColor;
-}
+/* ---------------------------------------------------------------- sections */
 
 .section {
-  padding: clamp(5rem, 10vw, 8rem) 0;
+  padding: clamp(4.5rem, 9vw, 7rem) 0;
+}
+
+.section-alt {
+  background: var(--color-surface-alt);
 }
 
 .section-heading {
-  max-width: 760px;
-  margin-bottom: 3rem;
+  max-width: 740px;
+  margin-bottom: 2.75rem;
 }
 
 .section-heading h2 {
   margin-bottom: 1rem;
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  letter-spacing: -0.05em;
+  font-size: clamp(2rem, 4.2vw, 3.1rem);
+  letter-spacing: -0.015em;
 }
 
 .section-heading p {
   margin: 0;
   color: var(--color-text-muted);
-  font-size: 1.08rem;
+  font-size: 1.05rem;
 }
 
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .card {
-  position: relative;
-  min-height: 280px;
-  padding: 1.6rem;
-  overflow: hidden;
+  padding: 1.75rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  background: linear-gradient(
-    145deg,
-    rgba(13, 33, 69, 0.84),
-    rgba(6, 19, 47, 0.62)
-  );
-  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.16);
-  transition: transform var(--transition), border-color var(--transition);
+  background: var(--color-surface);
+  transition: border-color var(--transition), box-shadow var(--transition);
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(16, 211, 244, 0.40);
-}
-
-.card::after {
-  content: "";
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  right: -55px;
-  bottom: -70px;
-  border-radius: 50%;
-  background: var(--brand-gradient);
-  filter: blur(60px);
-  opacity: 0.22;
+  border-color: var(--3sl-sky-blue);
+  box-shadow: var(--surface-shadow);
 }
 
 .card-number {
-  margin-bottom: 3.3rem;
-  color: var(--cyan-400);
-  font-family: var(--font-display);
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
+  margin-bottom: 2.25rem;
+  color: var(--color-accent);
+  font-size: 0.88rem;
+  font-weight: var(--weight-medium);
 }
 
 .card h3 {
-  margin-bottom: 0.8rem;
-  font-size: 1.4rem;
+  margin-bottom: 0.7rem;
+  font-size: 1.3rem;
 }
 
 .card p {
@@ -425,10 +354,10 @@ h1 {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1rem;
-  padding: 1.2rem 1.25rem;
+  padding: 1.25rem 1.35rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.025);
+  background: var(--color-surface);
 }
 
 .principle-mark {
@@ -437,13 +366,13 @@ h1 {
   display: grid;
   place-items: center;
   border-radius: 50%;
-  color: var(--navy-950);
-  background: var(--brand-gradient);
-  font-weight: 900;
+  color: var(--3sl-white);
+  background: var(--color-accent);
+  font-weight: var(--weight-medium);
 }
 
 .principle h3 {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
   font-size: 1.05rem;
 }
 
@@ -454,35 +383,31 @@ h1 {
 }
 
 .cta {
-  padding: clamp(2rem, 5vw, 4rem);
-  border: 1px solid rgba(16, 211, 244, 0.26);
+  padding: clamp(2rem, 5vw, 3.75rem);
   border-radius: var(--radius-lg);
-  background:
-    radial-gradient(circle at 88% 0%, rgba(103, 66, 234, 0.30), transparent 32rem),
-    radial-gradient(circle at 0% 100%, rgba(16, 211, 244, 0.20), transparent 28rem),
-    var(--color-surface);
-  box-shadow: var(--surface-shadow);
+  background: var(--color-dark);
+  color: var(--color-on-dark);
+}
+
+.cta .eyebrow {
+  color: var(--color-highlight);
 }
 
 .cta h2 {
-  max-width: 800px;
-  /* Carries the full gap down to the button now that the CTA has no
-     paragraph between them. Drop back to 1rem if copy is added back. */
+  max-width: 780px;
   margin-bottom: 2rem;
-  font-size: clamp(2.3rem, 5vw, 4.5rem);
-  letter-spacing: -0.055em;
+  color: var(--3sl-white);
+  font-weight: var(--weight-light);
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  letter-spacing: -0.015em;
 }
 
-.cta p {
-  max-width: 680px;
-  margin: 0 0 2rem;
-  color: var(--color-text-muted);
-  font-size: 1.08rem;
-}
+/* ---------------------------------------------------------------- footer */
 
 .site-footer {
-  padding: 2rem 0 3rem;
+  padding: 2.25rem 0 3rem;
   color: var(--color-text-muted);
+  font-size: 0.92rem;
 }
 
 .footer-inner {
@@ -500,48 +425,204 @@ h1 {
 
 .footer-links {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem 1.25rem;
 }
 
 .footer-links a {
+  color: var(--color-text-muted);
   text-decoration: none;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+.footer-links a:hover {
+  color: var(--color-accent);
 }
 
-@keyframes spin-reverse {
-  to {
-    transform: rotate(-360deg);
-  }
+/* ---------------------------------------------------------------- legal pages */
+
+.doc-hero { padding: 4rem 0 1.25rem; }
+.doc-hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 0; }
+.doc { padding: 0 0 5rem; }
+.doc-body { max-width: 46rem; }
+.doc-body h2 {
+  font-size: 1.2rem;
+  margin: 2.75rem 0 0.6rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--color-border);
 }
+.doc-body p { color: var(--color-text); margin: 0 0 0.9rem; }
+.doc-body strong { color: var(--color-heading); font-weight: var(--weight-medium); }
+.doc-updated { color: var(--color-text-muted); font-size: 0.9rem; margin-top: 1rem; }
+/* The carrier-facing clause reviewers look for, on its own surface so it is
+   found at a glance rather than read for. */
+.doc-callout {
+  margin: 1.75rem 0;
+  padding: 1.25rem 1.4rem;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: var(--color-surface-alt);
+}
+.doc-callout p { margin: 0; }
+.doc-next { margin-top: 3rem; padding-top: 1.75rem; border-top: 1px solid var(--color-border); }
+
+/* ---------------------------------------------------------------- sign in */
+
+.signin {
+  min-height: calc(100vh - 76px - 120px);
+  display: grid;
+  place-items: center;
+  padding: clamp(3rem, 8vw, 6rem) 0;
+  background: var(--color-surface-alt);
+}
+
+.signin-card {
+  width: min(100%, 440px);
+  padding: clamp(1.75rem, 5vw, 2.5rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--surface-shadow);
+}
+
+.signin-card .mark {
+  width: 56px;
+  height: auto;
+  margin-bottom: 1.25rem;
+}
+
+.signin-card h1 {
+  margin-bottom: 0.4rem;
+  font-size: 1.75rem;
+}
+
+.signin-sub {
+  margin: 0 0 1.5rem;
+  color: var(--color-text-muted);
+}
+
+.signin-card label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--color-heading);
+  font-size: 0.92rem;
+  font-weight: var(--weight-medium);
+}
+
+.signin-card input[type="email"] {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  background: var(--3sl-white);
+}
+
+.signin-card input[type="email"]:focus {
+  border-color: var(--color-accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(55, 138, 221, 0.25);
+}
+
+.signin-card .button {
+  width: 100%;
+  margin-top: 1rem;
+  border: 0;
+}
+
+.signin-card .button[disabled] {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.signin-msg {
+  margin: 1rem 0 0;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-alt);
+  color: var(--color-heading);
+  font-size: 0.93rem;
+}
+
+.signin-msg.is-error {
+  background: #FDECEA;
+  color: var(--color-error);
+}
+
+.portal-list {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.portal-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 1.1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-heading);
+  text-decoration: none;
+  font-weight: var(--weight-medium);
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.portal-list a:hover,
+.portal-list a:focus-visible {
+  border-color: var(--color-accent);
+  background: var(--color-surface-alt);
+}
+
+.portal-list a span {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: var(--weight-regular);
+}
+
+.text-button {
+  margin-top: 1.1rem;
+  padding: 0;
+  border: 0;
+  color: var(--color-accent);
+  background: none;
+  cursor: pointer;
+  font-size: 0.93rem;
+}
+
+.signin-help {
+  margin: 1.5rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ---------------------------------------------------------------- motion + responsive */
 
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     scroll-behavior: auto !important;
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
   }
 }
 
 @media (max-width: 900px) {
-  .hero {
-    min-height: auto;
-  }
-
   .hero-grid,
   .split {
     grid-template-columns: 1fr;
   }
 
-  .hero-visual {
-    width: min(100%, 650px);
-    margin-inline: auto;
+  .hero-visual img {
+    width: min(60%, 280px);
   }
 
   .card-grid {
@@ -549,8 +630,6 @@ h1 {
   }
 }
 
-/* Nav collapses earlier than the other breakpoints: four links plus the
-   Client Portal pill run out of room before 720px. */
 @media (max-width: 860px) {
   .nav-toggle {
     display: inline-grid;
@@ -567,8 +646,8 @@ h1 {
     flex-direction: column;
     padding: 1rem;
     border: 1px solid var(--color-border);
-    border-radius: 16px;
-    background: rgba(3, 11, 35, 0.98);
+    border-radius: var(--radius-md);
+    background: var(--3sl-white);
     box-shadow: var(--surface-shadow);
   }
 
@@ -582,10 +661,6 @@ h1 {
 }
 
 @media (max-width: 720px) {
-  h1 {
-    font-size: clamp(2.8rem, 16vw, 4.7rem);
-  }
-
   .footer-inner {
     align-items: flex-start;
     flex-direction: column;

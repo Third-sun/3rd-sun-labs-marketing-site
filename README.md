@@ -1,49 +1,51 @@
-# 3rd Sun Labs Website Starter
+# 3rd Sun Labs marketing site
 
-This package contains a complete responsive one-page website, a browser-based brand guide,
-design tokens, favicon/app icons, social-sharing artwork, and extracted logo assets.
+The static site at https://3rdsunlabs.com, served by GitHub Pages from `main`
+(custom domain in `CNAME`). No build step: what's in the repo is what's served.
 
-## Open it locally
+## Brand
 
-Double-click `index.html` to preview the site in a browser.
+Everything visual comes from the 3rd Sun Labs Brand Package v1.0 (October 2026),
+kept in OneDrive under `03 Marketing & Brand/Brand/Brand Package/`:
 
-For a more accurate local preview, run a simple local server from this folder:
+- `assets/brand/`: the horizontal logo (full color), the mark (full color and
+  reversed) and the web banner used as the social share image, copied from
+  `01-Logos/` and `02-Digital/Social/`. Use these files; never retype the
+  wordmark.
+- Favicons and `site.webmanifest` at the root, from `02-Digital/Favicons/`.
+- `tokens.css`: the kit's colors and Poppins, from `03-Color-and-Type/`, plus
+  the semantic names the CSS uses.
+
+Rules from the guidelines that the CSS follows: mostly light space and navy,
+Labs Blue for actions, gold only as a highlight, sentence case (no all caps),
+and no gradients, glows or shadows on the logo.
+
+## Pages
+
+- `index.html`: the landing page.
+- `privacy.html`, `terms.html`: the SMS program's privacy policy and terms,
+  served at `/privacy` and `/terms`. Carriers review these; change the wording
+  only deliberately.
+- `login.html` + `login.js`: **Client sign in** (`/login`). Someone enters an
+  email; the page asks each client portal whether that address is on its
+  roster (`POST /api/auth/lookup` in the clientportal repo, yes/no only, rate
+  limited) and sends them to the one that says yes, with the email filled in.
+  Someone on more than one portal picks one. 3rd Sun Labs addresses are also
+  offered the admin portal. **When a client launches a portal, add its URL to
+  `PORTALS` in `login.js`.** The page never sees a password.
+
+## Preview locally
 
 ```bash
-python -m http.server 8000
+python -m http.server 8000 --bind 127.0.0.1
 ```
 
-Then open `http://localhost:8000`.
+Open http://localhost:8000. `/login` is `login.html` locally (GitHub Pages drops
+the extension). To try sign-in against a portal running on your machine in
+`PORTAL_AUTH=dev`: `http://localhost:8000/login.html?portals=http://localhost:8010`.
+That override only works on localhost.
 
-## Files
+## Still to do before launch
 
-- `index.html` — responsive landing page
-- `styles.css` — site components, layout, responsive rules
-- `tokens.css` — reusable colors, gradients, typography, spacing, and effects
-- `script.js` — mobile menu and sticky-header behavior
-- `brand-guide.html` — printable/browser-based visual style guide
-- `site.webmanifest` — installable-site metadata
-- `robots.txt` and `sitemap.xml` — search-engine starter files
-- `assets/` — logo files, favicons, app icons, Open Graph image, and JSON design tokens
-
-## Before publishing
-
-1. Confirm your final domain and update it in:
-   - `index.html`
-   - `robots.txt`
-   - `sitemap.xml`
-2. Confirm or replace `hello@3rdsunlabs.com`.
-3. Replace the starter service copy with your final offers.
-4. Add analytics only after choosing a provider and defining your privacy approach.
-5. Test the final deployment on desktop, tablet, and mobile.
-
-## Deployment
-
-This is a static site. It can be uploaded directly to most static hosting platforms or
-placed behind your existing web server. No build process is required.
-
-## Important logo note
-
-The selected logo originated as raster artwork. The included transparent PNGs are suitable
-for the website and normal digital use. Before producing large signs, embroidered apparel,
-or other large-format materials, commission or create a clean vector master in SVG/EPS/PDF.
+`robots.txt` blocks crawlers while the copy is placeholder. Switch it to
+`Allow: /` once the service copy is final.

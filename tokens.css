@@ -1,46 +1,50 @@
+/* 3rd Sun Labs brand tokens, from Brand Package v1.0 (October 2026),
+   03-Color-and-Type/3SL-brand-tokens.css. Keep the --3sl-* values in step with
+   the kit; the semantic names below are what the site's CSS uses. */
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
-  /* Core brand colors */
-  --navy-950: #030B23;
-  --navy-900: #06132F;
-  --navy-800: #0D2145;
-  --cyan-400: #10D3F4;
-  --blue-500: #0595EB;
-  --indigo-500: #6742EA;
-  --violet-400: #7D74ED;
-  --white: #F4F7FF;
-  --muted: #A7B6D4;
+  /* Brand palette */
+  --3sl-sun-navy: #042C53;   /* Primary dark. Backgrounds, headlines, wordmark. */
+  --3sl-deep-blue: #0C447C;  /* Mark circle. Strong accents. */
+  --3sl-labs-blue: #185FA5;  /* Primary action color. Links, buttons, "Labs." */
+  --3sl-sky-blue: #378ADD;   /* Mark circle. Secondary accents, charts. */
+  --3sl-mist: #85B7EB;       /* Text and outlines on navy. */
+  --3sl-ice: #B5D4F4;        /* Borders, outlines on navy. */
+  --3sl-frost: #E6F1FB;      /* Light backgrounds, text on navy. */
+  --3sl-sun-gold: #EF9F27;   /* The third sun. Highlight only, never body text. */
+  --3sl-ink: #2C2C2A;        /* Body text on light backgrounds. */
+  --3sl-stone: #5F5E5A;      /* Secondary text. */
+  --3sl-white: #FFFFFF;
 
-  /* Semantic tokens */
-  --color-bg: var(--navy-950);
-  --color-surface: var(--navy-900);
-  --color-surface-raised: var(--navy-800);
-  --color-text: var(--white);
-  --color-text-muted: var(--muted);
-  --color-accent: var(--cyan-400);
-  --color-accent-secondary: var(--violet-400);
-  --color-border: rgba(167, 182, 212, 0.18);
+  /* Semantic tokens: mostly light space and navy, blue for actions, gold sparingly */
+  --color-bg: var(--3sl-white);
+  --color-surface: var(--3sl-white);
+  --color-surface-alt: var(--3sl-frost);
+  --color-heading: var(--3sl-sun-navy);
+  --color-text: var(--3sl-ink);
+  --color-text-muted: var(--3sl-stone);
+  --color-accent: var(--3sl-labs-blue);
+  --color-accent-strong: var(--3sl-deep-blue);
+  --color-highlight: var(--3sl-sun-gold);
+  --color-border: var(--3sl-ice);
+  --color-dark: var(--3sl-sun-navy);
+  --color-on-dark: var(--3sl-frost);
+  --color-on-dark-muted: var(--3sl-mist);
+  --color-error: #B42318;
 
-  /* Brand effects */
-  --brand-gradient: linear-gradient(
-    115deg,
-    var(--cyan-400) 0%,
-    var(--blue-500) 46%,
-    var(--indigo-500) 76%,
-    var(--violet-400) 100%
-  );
-  --brand-glow: 0 0 42px rgba(16, 211, 244, 0.16);
-  --surface-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
-
-  /* Typography */
-  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
-  --font-body: "Inter", "Segoe UI", sans-serif;
+  /* Typography: Poppins. Light 300 display, Medium 500 headlines, Regular 400 body. */
+  --font-display: "Poppins", Arial, Helvetica, sans-serif;
+  --font-body: "Poppins", Arial, Helvetica, sans-serif;
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
 
   /* Layout */
   --container: 1180px;
-  --radius-sm: 12px;
-  --radius-md: 20px;
-  --radius-lg: 30px;
-  --transition: 180ms ease;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --transition: 160ms ease;
+  --surface-shadow: 0 18px 50px rgba(4, 44, 83, 0.10);
 }
