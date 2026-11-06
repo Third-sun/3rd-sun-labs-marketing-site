@@ -40,7 +40,9 @@
         <h1>Client sign in</h1>
         <p class="signin-sub">Enter your work email and we'll take you to your portal.</p>
         <label for="email">Email</label>
-        <input id="email" name="email" type="email" autocomplete="username" required
+        <!-- No name attribute: if the form is submitted before login.js has
+             loaded, the browser has nothing to put in the URL. -->
+        <input id="email" type="email" autocomplete="username" required
                autocapitalize="off" spellcheck="false" maxlength="254">
         <button class="button button-primary" id="continueBtn" type="submit">Continue</button>
         <p class="signin-msg" id="msg" role="alert" hidden></p>
