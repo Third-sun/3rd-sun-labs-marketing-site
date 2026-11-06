@@ -42,6 +42,7 @@
 
       <nav class="nav-links" id="main-navigation" aria-label="Primary navigation">
         <a href="#capabilities">Capabilities</a>
+        <a href="#ask">Ask AI</a>
         <a href="#approach">Approach</a>
         <a href="#contact">Start a project</a>
         <a class="button button-primary" href="/login">Client sign in</a>
@@ -116,7 +117,98 @@
       </div>
     </section>
 
-    <section class="section section-alt" id="approach">
+    <section class="section section-alt" id="ask">
+      <div class="container split ask-split">
+        <div class="section-heading">
+          <div class="eyebrow">Ask AI</div>
+          <h2>Ask your business a question. Get the answer from your own numbers.</h2>
+          <p>
+            Every client portal includes Ask AI, an assistant that knows your data.
+            Ask in plain English, the way you'd ask a colleague, and get a straight
+            answer with the figures behind it.
+          </p>
+          <ul class="ask-points">
+            <li>
+              <h3>Your data, not the internet</h3>
+              <p>Answers come from the systems your business already runs on, brought together and refreshed every day.</p>
+            </li>
+            <li>
+              <h3>Shows its working</h3>
+              <p>Every answer names the numbers and sources it used, so you can check it and drill into the detail.</p>
+            </li>
+            <li>
+              <h3>Private to your company</h3>
+              <p>Only the people you invite can sign in, and your data stays in its own space.</p>
+            </li>
+          </ul>
+        </div>
+
+        <figure class="ask-demo" aria-labelledby="askDemoCaption">
+          <div class="ask-window">
+            <div class="ask-bar">
+              <img src="/assets/brand/3SL-mark-fullcolor.svg" alt="" width="22" height="21">
+              <span class="ask-bar-title">Ask AI</span>
+              <span class="ask-tag">Example data</span>
+            </div>
+
+            <div class="ask-thread">
+              <p class="ask-msg ask-msg-user">How did revenue this month compare to last month, and what drove it?</p>
+
+              <div class="ask-msg ask-msg-ai">
+                <p>
+                  Revenue was <strong>$48,200</strong> in October, up <strong>12%</strong> on
+                  September. Most of the increase came from repeat customers, who booked
+                  38 more jobs than the month before.
+                </p>
+
+                <div class="ask-chart" role="img"
+                     aria-label="Bar chart of monthly revenue, May to October, rising to $48,200 in October.">
+                  <div class="ask-chart-head">
+                    <span>Monthly revenue</span>
+                    <span class="ask-chart-delta">+12% vs Sep</span>
+                  </div>
+                  <div class="ask-bars">
+                    <div class="ask-col"><span class="ask-bar-fill" style="--h:58%"></span><span>May</span></div>
+                    <div class="ask-col"><span class="ask-bar-fill" style="--h:64%"></span><span>Jun</span></div>
+                    <div class="ask-col"><span class="ask-bar-fill" style="--h:61%"></span><span>Jul</span></div>
+                    <div class="ask-col"><span class="ask-bar-fill" style="--h:70%"></span><span>Aug</span></div>
+                    <div class="ask-col"><span class="ask-bar-fill" style="--h:79%"></span><span>Sep</span></div>
+                    <div class="ask-col is-current"><span class="ask-bar-fill" style="--h:89%"></span><span>Oct</span></div>
+                  </div>
+                </div>
+
+                <table class="ask-table">
+                  <thead>
+                    <tr><th scope="col">Customer type</th><th scope="col">Sep</th><th scope="col">Oct</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th scope="row">Repeat</th><td>$31,600</td><td>$36,100</td></tr>
+                    <tr><th scope="row">New</th><td>$11,450</td><td>$12,100</td></tr>
+                  </tbody>
+                </table>
+
+                <p class="ask-sources">Sources: invoices and bookings, updated this morning</p>
+              </div>
+
+              <div class="ask-suggestions" aria-label="Suggested follow-up questions">
+                <span>Break it down by service</span>
+                <span>Which customers are slipping?</span>
+              </div>
+            </div>
+
+            <div class="ask-input" aria-hidden="true">
+              <span>Ask about your business…</span>
+              <span class="ask-send">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+            </div>
+          </div>
+          <figcaption id="askDemoCaption">An example conversation, with sample figures for an imaginary business.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="approach">
       <div class="container split">
         <div class="section-heading">
           <div class="eyebrow">Our approach</div>

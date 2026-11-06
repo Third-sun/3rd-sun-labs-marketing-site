@@ -402,6 +402,246 @@ h3 {
   letter-spacing: -0.015em;
 }
 
+/* ---------------------------------------------------------------- ask ai */
+
+.ask-split {
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+}
+
+.ask-split .section-heading {
+  margin-bottom: 0;
+}
+
+.ask-points {
+  display: grid;
+  gap: 1.1rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ask-points li {
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--color-accent);
+}
+
+.ask-points h3 {
+  margin-bottom: 0.2rem;
+  font-size: 1.05rem;
+}
+
+.ask-points p {
+  font-size: 0.95rem;
+}
+
+.ask-demo {
+  margin: 0;
+  min-width: 0;
+}
+
+.ask-window {
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--surface-shadow);
+}
+
+.ask-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ask-bar-title {
+  color: var(--color-heading);
+  font-weight: var(--weight-medium);
+}
+
+.ask-tag {
+  margin-left: auto;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: var(--color-surface-alt);
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
+.ask-thread {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.ask-msg {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.ask-msg-user {
+  justify-self: end;
+  max-width: 85%;
+  padding: 0.7rem 1rem;
+  border-radius: 16px 16px 4px 16px;
+  background: var(--color-accent);
+  color: var(--3sl-white);
+}
+
+.ask-msg-ai {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 16px 16px 16px 4px;
+  background: var(--3sl-white);
+  color: var(--color-text);
+}
+
+.ask-msg-ai p {
+  margin: 0;
+}
+
+.ask-msg-ai strong {
+  color: var(--color-heading);
+  font-weight: var(--weight-medium);
+}
+
+.ask-chart {
+  padding: 0.85rem 0.95rem 0.7rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-alt);
+}
+
+.ask-chart-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+}
+
+.ask-chart-delta {
+  color: var(--color-accent);
+  font-weight: var(--weight-medium);
+}
+
+.ask-bars {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+  height: 110px;
+}
+
+.ask-col {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: end;
+  justify-items: center;
+  gap: 0.3rem;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+}
+
+.ask-bar-fill {
+  width: 100%;
+  max-width: 34px;
+  height: var(--h);
+  border-radius: 6px 6px 2px 2px;
+  background: var(--3sl-ice);
+}
+
+.ask-col.is-current .ask-bar-fill {
+  background: var(--color-accent);
+}
+
+.ask-col.is-current span:last-child {
+  color: var(--color-heading);
+  font-weight: var(--weight-medium);
+}
+
+.ask-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.ask-table th,
+.ask-table td {
+  padding: 0.45rem 0.25rem;
+  border-bottom: 1px solid var(--3sl-frost);
+  text-align: right;
+  font-weight: var(--weight-regular);
+}
+
+.ask-table th[scope="row"],
+.ask-table thead th:first-child {
+  text-align: left;
+}
+
+.ask-table thead th {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
+.ask-table td:last-child {
+  color: var(--color-heading);
+  font-weight: var(--weight-medium);
+}
+
+.ask-sources {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
+.ask-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ask-suggestions span {
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--3sl-white);
+  color: var(--color-accent);
+  font-size: 0.8rem;
+}
+
+.ask-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 1.25rem 1.25rem;
+  padding: 0.55rem 0.55rem 0.55rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+
+.ask-send {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--3sl-white);
+}
+
+.ask-demo figcaption {
+  margin-top: 0.8rem;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
 /* ---------------------------------------------------------------- footer */
 
 .site-footer {
@@ -617,7 +857,8 @@ h3 {
 
 @media (max-width: 900px) {
   .hero-grid,
-  .split {
+  .split,
+  .ask-split {
     grid-template-columns: 1fr;
   }
 
